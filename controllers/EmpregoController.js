@@ -45,16 +45,6 @@ exports.Emprego = function(last_id, limit, callback){
 		
 	}else{
 		
-		db.Emprego.find({'_id': {'$gt': last_id}}). limit(limit ,function(error, emprego) {
-	
-			if(error) {
-	
-				callback({error: 'Não foi possivel retornar o emprego'});
-			}else {
-				callback(emprego);
-			}
-	
-		});
 		
 	}
 

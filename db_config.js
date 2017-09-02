@@ -18,7 +18,7 @@ db.once('open', function(){ //no evento de abertura da conexao, cria o esquema d
 		created_at: Date
 	});
 
-	schema.plugin(mongoosePaginate);
+	empregosSchema.plugin(mongoosePaginate);
 
 	exports.Emprego = mongoose.model('Emprego', empregosSchema);
 });
