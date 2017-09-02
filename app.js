@@ -26,7 +26,7 @@ app.get('/emprego/:id', function(req, res){
 	});										  
 });
 
-app.get('/emprego/:last_id&:limit', function(req, res){ 
+app.get('/emprego/:last_id/:limit', function(req, res){ 
 
 	var last_id= req.params.id;
 	var limit = req.params.limit;
