@@ -32,7 +32,7 @@ exports.Emprego = function(last_id, limit, callback){
 
 	if(last_id == 0){
 		
-		db.Emprego.find().limit(limit ,function(error, emprego) {
+		db.Emprego.paginate({}, { page: 3, limit: 10 } ,function(error, emprego) {
 	
 			if(error) {
 	

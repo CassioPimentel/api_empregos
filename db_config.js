@@ -1,6 +1,7 @@
 var db_string = 'mongodb://cassiowin98:eng1211048@ds042729.mlab.com:42729/empregos'; //string de conexao para o servidor mongo db
 
 var mongoose = require('mongoose').connect(db_string); //faz a requisição do mongoose passando a string de conexão
+var mongoosePaginate = require('mongoose-paginate');
 
 var db = mongoose.connection; //conecta ao banco
 
@@ -16,6 +17,8 @@ db.once('open', function(){ //no evento de abertura da conexao, cria o esquema d
 		link: String,
 		created_at: Date
 	});
+
+	schema.plugin(mongoosePaginate);
 
 	exports.Emprego = mongoose.model('Emprego', empregosSchema);
 });
