@@ -26,12 +26,12 @@ app.get('/emprego/:id', function(req, res){
 	});										  
 });
 
-app.get('/emprego/:last_id/:limit', function(req, res){ 
+app.get('/emprego/:page/:limit', function(req, res){ 
 
-	var last_id= req.params.last_id;
+	var page  = req.params.page;
 	var limit = req.params.limit;
 
-	empregoController.Emprego(last_id, limit, function(resp) { 
+	empregoController.Emprego(page, limit, function(resp) { 
 											 
 		res.json(resp);					      
 	});										  

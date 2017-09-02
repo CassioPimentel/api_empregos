@@ -28,29 +28,18 @@ exports.Emprego = function(id, callback){
 	});
 }
 
-exports.Emprego = function(last_id, limit, callback){
+exports.Emprego = function(page, limit, callback){
 
-	if(last_id == 0){
-		
-		db.Emprego.paginate({}, { page: 3, limit: 10 } ,function(error, emprego) {
-	
-			if(error) {
-	
-				callback({error: 'Não foi possivel retornar o emprego'});
-			}else {
-				callback(emprego);
-			}
-	
-		});
-		
-	}else{
-		
-		
-	}
+	db.Emprego.paginate({}, { page: page, limit: parseInt(limit) } ,function(error, emprego) {
 
-	var empregos = db.Emprego.find().limit(limit);
+		if(error) {
+			console.log(error);
+			callback({error: 'Não foi possivel retornar o emprego', error});
+		}else {
+			callback(emprego);
+		}
 
-
+	});
 }
 
 exports.save = function(titulo, descricao, cidade, estado, link, callback){
