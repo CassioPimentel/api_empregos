@@ -19,6 +19,7 @@
   "homepage": "https://github.com/CassioPimentel/api_adoro_mar",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "cors": "^2.8.4",
     "express": "^4.13.4",
     "mongoose": "^4.4.14",
     "mongoose-paginate": "^5.0.3",

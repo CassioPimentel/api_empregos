@@ -1,6 +1,9 @@
 var express = require('express');
+var cors = require('cors')
 
 var app = module.exports = express();
+
+app.use(cors())
 
 var bodyparser = require('body-parser');
 
