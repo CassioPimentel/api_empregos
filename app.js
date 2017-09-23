@@ -16,11 +16,11 @@ app.get('/emprego', function(req, res){
 	});										  
 });
 
-app.get('/emprego/:id', function(req, res){ 
+app.get('/vaga/:id', function(req, res){ 
 
 	var id = req.params.id;
 
-	empregoController.Emprego(id, function(resp) { 
+	empregoController.Vaga(id, function(resp) { 
 											 
 		res.json(resp);					      
 	});										  
