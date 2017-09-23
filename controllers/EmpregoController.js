@@ -16,7 +16,7 @@ exports.list = function(callback){
 
 exports.Vaga = function(id, callback){
 
-	db.Vaga.findOne({_id: id},function(error, emprego) {
+	db.Emprego.findOne({_id: id},function(error, emprego) {
 
 		if(error) {
 
