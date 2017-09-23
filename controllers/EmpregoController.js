@@ -14,9 +14,9 @@ exports.list = function(callback){
 	});
 };
 
-exports.Emprego = function(id, callback){
+exports.Vaga = function(id, callback){
 
-	db.Emprego.findOne({_id: id},function(error, emprego) {
+	db.Vaga.findOne({_id: id},function(error, emprego) {
 
 		if(error) {
 
