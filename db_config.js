@@ -14,7 +14,8 @@ db.once('open', function(){ //no evento de abertura da conexao, cria o esquema d
 		descricao: String,
 		cidade: String,
 		estado: String,
-		VagaGratuita: Boolean,
+		vagaGratuita: Boolean,
+		salario: String,
 		link: String,
 		created_at: Date
 	});
