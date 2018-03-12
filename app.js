@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 	res.json('Bem vindo a API de empregos');
 });
 
-app.get('/emprego', function(req, res){ 
+app.get('/vagas', function(req, res){ 
 
 	empregoController.list(function(resp) { 
 											 
