@@ -9,15 +9,29 @@ db.on('error', console.error.bind(console, 'Erro ao conectar no banco')); //se h
 
 db.once('open', function(){ //no evento de abertura da conexao, cria o esquema do banco
 
+	//var empregosSchema = mongoose.Schema({
+	//	titulo: String,
+	//	descricao: String,
+	//	cidade: String,
+	//	estado: String,
+	//	vagaGratuita: Boolean,
+	//	salario: String,
+	//	link: String,
+	//	created_at: Date
+	//});
+
 	var empregosSchema = mongoose.Schema({
 		titulo: String,
 		descricao: String,
+		link: String,
+		email: String,
+		data: Date,
+		empresa: String,
 		cidade: String,
 		estado: String,
-		vagaGratuita: Boolean,
+		setor: String,
 		salario: String,
-		link: String,
-		created_at: Date
+		escolaridade: String
 	});
 
 	empregosSchema.plugin(mongoosePaginate);
