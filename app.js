@@ -7,7 +7,7 @@ var cidadeController = require('./controllers/CidadeEstadoController.js');
 
 app.get('/', function(req, res){
 
-	res.json('Bem vindo a API de empregos');
+	res.json('Bem vindo a API de empregos e cidades');
 });
 
 app.get('/vagas', function(req, res){ 
