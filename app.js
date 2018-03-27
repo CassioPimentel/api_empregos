@@ -31,7 +31,7 @@ app.get('/vaga/:id', function(req, res){
 app.get('/cidade/:nome', function(req, res){ 
 
 	var cidade = req.params.nome;
-
+	console.log(cidade);
 	CidadeController.get(cidade, function(resp) { 
 											 
 		res.json(resp);					      
