@@ -38,6 +38,14 @@ app.get('/cidade/:nome', function(req, res){
 	});										  
 });
 
+app.get('/cidades', function(req, res){ 
+
+	CidadeController.list(function(resp) { 
+											 
+		res.json(resp);					      
+	});										  
+});
+
 app.get('/emprego/:page/:limit', function(req, res){ 
 
 	var page  = req.params.page;

@@ -13,3 +13,17 @@ exports.get = function(cidade, callback){
 
 	});
 };
+
+exports.list = function(callback){
+
+	db.Cidade.find({},function(error, cidades) {
+
+		if(error) {
+
+			callback({error: 'Não foi possivel retornar os empregos'});
+		}else {
+			callback(cidades);
+		}
+
+	});
+};
