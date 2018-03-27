@@ -2,7 +2,7 @@ var db = require('../db_configCidade.js');
 
 exports.get = function(cidade, callback){
 
-	db.Cidade.find({'cidade': new RegExp('^' + cidade) }, function(error, cidades) {
+	db.Cidade.find({'cidade': {$regex : ".*" + cidade + "*"} }, function(error, cidades) {
 
 		if(error) {
 
