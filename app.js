@@ -32,7 +32,7 @@ app.get('/cidade/:nome', function(req, res){
 
 	var cidade = req.params.nome;
 	console.log(cidade);
-	CidadeController.get(cidade, function(resp) { 
+	cidadeController.get(cidade, function(resp) { 
 											 
 		res.json(resp);					      
 	});										  
@@ -40,7 +40,7 @@ app.get('/cidade/:nome', function(req, res){
 
 app.get('/cidades', function(req, res){ 
 
-	CidadeController.list(function(resp) { 
+	cidadeController.list(function(resp) { 
 											 
 		res.json(resp);					      
 	});										  
