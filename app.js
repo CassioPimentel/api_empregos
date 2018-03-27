@@ -1,7 +1,9 @@
 var db = require('./db_config.js'); 
+var db2 = require('./db_configCidade.js'); 
 var app = require('./app_config.js');  
 var validator = require('validator');
 var empregoController = require('./controllers/EmpregoController.js');
+var cidadeController = require('./controllers/CidadeEstadoController.js');
 
 app.get('/', function(req, res){
 
@@ -21,6 +23,16 @@ app.get('/vaga/:id', function(req, res){
 	var id = req.params.id;
 
 	empregoController.Vaga(id, function(resp) { 
+											 
+		res.json(resp);					      
+	});										  
+});
+
+app.get('/cidade/:nome', function(req, res){ 
+
+	var cidade = req.params.nome;
+
+	CidadeController.get(cidade, function(resp) { 
 											 
 		res.json(resp);					      
 	});										  
