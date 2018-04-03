@@ -16,7 +16,8 @@ exports.list = function(callback){
 
 exports.Busca = function(titulo, cidade, callback){
 
-	db.Emprego.find({}, { titulo: titulo, cidade: cidade },function(error, emprego) {
+	var query = { titulo: titulo, cidade: cidade };
+	db.Emprego.find(query,function(error, emprego) {
 
 		if(error) {
 
