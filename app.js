@@ -18,6 +18,17 @@ app.get('/vagas', function(req, res){
 	});										  
 });
 
+app.get('/busca/:titulo/:cidade', function(req, res){ 
+
+	var titulo = req.params.titulo;
+	var cidade = req.params.cidade;
+
+	empregoController.Busca(titulo, cidade, function(resp) { 
+											 
+		res.json(resp);					      
+	});										  
+});
+
 app.get('/vaga/:id', function(req, res){ 
 
 	var id = req.params.id;

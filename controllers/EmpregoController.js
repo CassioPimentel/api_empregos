@@ -14,6 +14,20 @@ exports.list = function(callback){
 	});
 };
 
+exports.Busca = function(titulo, cidade, callback){
+
+	db.Emprego.find({}, { titulo: titulo, cidade: cidade },function(error, emprego) {
+
+		if(error) {
+
+			callback({error: 'Não foi possivel retornar o emprego'});
+		}else {
+			callback(emprego);
+		}
+
+	});
+}
+
 exports.Vaga = function(id, callback){
 
 	db.Emprego.findOne({_id: id},function(error, emprego) {
