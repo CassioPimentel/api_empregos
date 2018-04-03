@@ -18,7 +18,7 @@ exports.Busca = function(titulo, cidade, callback){
 
 // '/.' + titulo + './i'
 // '/.' + cidade + './i'
-	var query = { titulo: { $regex: '/' + titulo + '/' } , cidade: { $regex: '/' + cidade + '/' } };
+	var query = { titulo: new RegExp(titulo, "i") , cidade: new RegExp(cidade, "i") };
 	db.Emprego.find(query,function(error, emprego) {
 
 		if(error) {
