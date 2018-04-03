@@ -17,7 +17,7 @@ exports.list = function(callback){
 exports.Busca = function(titulo, cidade, callback){
 
 
-	var query = { titulo: '^'+titulo, cidade: '^'+cidade };
+	var query = { titulo: '/.' + titulo + './i', cidade: '/.' + cidade + './i' };
 	db.Emprego.find(query,function(error, emprego) {
 
 		if(error) {
