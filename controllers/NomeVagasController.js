@@ -1,4 +1,4 @@
-var db = require('../db_configNomeVgas.js');
+var db = require('../db_configNomeVagas.js');
 
 exports.get = function(titulo, callback){
 
