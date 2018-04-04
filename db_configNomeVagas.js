@@ -15,5 +15,5 @@ db.once('open', function(){ //no evento de abertura da conexao, cria o esquema d
 
 	NomeVagasSchema.plugin(mongoosePaginate);
 
-	exports.NomeVagas = mongoose.model('NomeVagas', NomeVagasSchema);
+	exports.NomeVagas = mongoose.model('nomeVagas', NomeVagasSchema);
 });
