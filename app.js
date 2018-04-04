@@ -4,22 +4,31 @@ var app = require('./app_config.js');
 var validator = require('validator');
 var empregoController = require('./controllers/EmpregoController.js');
 var cidadeController = require('./controllers/CidadeEstadoController.js');
-var NomeVagasController = require('./controllers/NomesVagasController.js');
+var NomeVagasController = require('./controllers/NomeVagasController.js');
 
 app.get('/', function(req, res){
 
 	res.json('Bem vindo a API de empregos e cidades');
 });
 
-app.get('/nomeVagas/:titulo', function(req, res){ 
+app.get('/nomeVaga/:titulo', function(req, res){ 
 
 	var titulo = req.params.titulo;
 
-	NomeVagasController.getAll(titulo, function(resp) { 
+	NomeVagasController.get(titulo, function(resp) { 
 											 
 		res.json(resp);					      
 	});										  
 });
+
+app.get('/getAll', function(req, res){ 
+
+	NomeVagasController.getAll( function(resp) { 
+											 
+		res.json(resp);					      
+	});										  
+});
+
 
 app.get('/vagas', function(req, res){ 
 
