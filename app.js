@@ -1,7 +1,4 @@
-var db = require('./db_config.js'); 
-var db2 = require('./db_configCidade.js'); 
 var app = require('./app_config.js');  
-var validator = require('validator');
 var empregoController = require('./controllers/EmpregoController.js');
 var cidadeController = require('./controllers/CidadeEstadoController.js');
 var NomeVagasController = require('./controllers/NomeVagasController.js');
@@ -28,7 +25,6 @@ app.get('/getAll', function(req, res){
 		res.json(resp);					      
 	});										  
 });
-
 
 app.get('/vagas', function(req, res){ 
 
